@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-helix"
+version = "0.1.0"
+description = "Independent MCP server for Trellix Helix"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastmcp>=2.13.0,<3",
+  "httpx>=0.28.0,<1",
+  "PyJWT>=2.10.0,<3",
+  "python-dotenv>=1.1.0,<2",
+]
+
+[project.scripts]
+mcp-helix = "mcp_helix.server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
